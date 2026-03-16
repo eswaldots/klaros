@@ -1,5 +1,7 @@
+import { BUY_CTA_LINK } from "@/lib/consts";
 import { AnimatedButton } from "../animated/animated-button";
 import { Video } from "./components/video";
+import Link from "next/link";
 
 export const SocialProof = () => {
   // TODO: quita el mb
@@ -36,7 +38,14 @@ export const SocialProof = () => {
           </p>
 
           <div>
-            <AnimatedButton>Comprar</AnimatedButton>
+            <Link
+              href={BUY_CTA_LINK(
+                "Hola, estaria interesado en comprar productos KLAROS",
+              )}
+              target="_blank"
+            >
+              <AnimatedButton>Comprar</AnimatedButton>
+            </Link>
           </div>
         </div>
       </div>

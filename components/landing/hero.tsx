@@ -12,6 +12,8 @@ import MotionPathPlugin from "gsap/MotionPathPlugin";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useIsMobile } from "@/hooks/use-is-mobile";
+import Link from "next/link";
+import { BUY_CTA_LINK } from "@/lib/consts";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(Observer);
@@ -61,7 +63,14 @@ export const Hero = () => {
         </div>
 
         <div ref={buttonRef}>
-          <AnimatedButton>Comprar</AnimatedButton>
+          <Link
+            href={BUY_CTA_LINK(
+              "Hola, estaria interesado en comprar productos KLAROS",
+            )}
+            target="_blank"
+          >
+            <AnimatedButton>Comprar</AnimatedButton>
+          </Link>
         </div>
       </div>
 

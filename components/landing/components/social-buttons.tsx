@@ -58,7 +58,7 @@ const AnimatedIcon = ({
     >
       <HugeiconsIcon
         icon={icon}
-        className="size-5 md:size-6 text-primary"
+        className={cn("size-5 md:size-6 text-primary", className)}
         strokeWidth={1.7}
       />
     </Button>

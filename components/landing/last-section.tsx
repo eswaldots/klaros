@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AnimatedButton } from "../animated/animated-button";
 import Image from "next/image";
 
@@ -62,7 +63,9 @@ const LastSection = () => {
           </h3>
         </div>
 
-        <AnimatedButton>Ver productos</AnimatedButton>
+        <Link href="/products" className="z-40">
+          <AnimatedButton className="z-40">Ver productos</AnimatedButton>
+        </Link>
       </div>
     </section>
   );

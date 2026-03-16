@@ -1,4 +1,6 @@
+import { BUY_CTA_LINK } from "@/lib/consts";
 import { AnimatedButton } from "../animated/animated-button";
+import Link from "next/link";
 
 const PaymentMethods = () => {
   return (
@@ -10,7 +12,14 @@ const PaymentMethods = () => {
           <span className="text-primary-light">Consiguelo.</span>
         </h2>
 
-        <AnimatedButton>Comprar ahora</AnimatedButton>
+        <Link
+          href={BUY_CTA_LINK(
+            "Hola, estaria interesado en comprar productos KLAROS",
+          )}
+          target="_blank"
+        >
+          <AnimatedButton>Comprar ahora</AnimatedButton>
+        </Link>
       </div>
     </section>
   );
