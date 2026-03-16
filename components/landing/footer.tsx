@@ -31,11 +31,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="md:-mt-48">
-        <h1 className="z-10 text-primary font-bold tracking-tight text-[33vw] leading-none overflow-x-hidden">
+      <div className="md:-mt-[44rem] pb-4">
+        <h1 className="z-10 text-primary font-bold tracking-tight text-[33vw] leading-[0.8] overflow-hidden">
           KLAROS
         </h1>
-
         <div className="px-6 w-full flex items-center justify-between">
           <span className="text-lg text-primary tracking-tight">
             © 2026 KLAROS. Casi todos los derechos reservados
