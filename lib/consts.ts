@@ -9,7 +9,13 @@ export const PRODUCTS = [
       secondary: "bg-purple-300",
       bgForeground: "bg-green-900",
     },
-    preview: "/lavaplatos.png",
+    preview: {
+      src: "/lavaplatos.png",
+      height: 2000,
+      width: 2000,
+      spacing: "42",
+      className: "w-42 -bottom-44 -left-2",
+    },
     images: [],
   },
   {
@@ -21,10 +27,11 @@ export const PRODUCTS = [
       secondary: "bg-purple-200",
       foreground: "text-purple-900",
       bgForeground: "bg-purple-900",
+      linkButtons: "bg-purple-900/20",
       fgBackground: "text-purple-100",
       border: "border-purple-300",
     },
-    preview: "/desinfectante.png",
+    preview: { src: "/desinfectante.png", height: 2000, width: 2000 },
     description:
       "A disinfectant is a chemical substance or compound used to inactivate or destroy microorganisms on inert surfaces.[1] Disinfection does not necessarily kill all microorganisms, especially resistant bacterial spores;",
     images: [
@@ -33,6 +40,7 @@ export const PRODUCTS = [
         src: "/desinfectante.mp4",
       },
     ],
+    video: "/desinfectante.mp4",
   },
   {
     id: 3,
@@ -44,7 +52,14 @@ export const PRODUCTS = [
       foreground: "text-neutral-900",
       bgForeground: "bg-neutral-900",
     },
-    preview: "/src",
+    preview: {
+      src: "/detergente.png",
+      height: 2000,
+      width: 2000,
+      spacing: "36",
+      className: "w-42 -bottom-36 -left-2",
+    },
+    video: "/detergente.mp4",
     images: [],
   },
 ];
@@ -55,4 +70,4 @@ type ArrayElement<ArrayType extends readonly unknown[]> =
 export type IProduct = ArrayElement<typeof PRODUCTS>;
 
 export const BUY_CTA_LINK = (message: string) =>
-  `https://wa.me/584241365355?text=${encodeURI(message)}`;
+  `https://wa.me/58242263894?text=${encodeURI(message)}`;

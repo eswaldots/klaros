@@ -33,7 +33,7 @@ const AnimatedProduct = ({ ...product }: IProduct) => {
         gsap.fromTo(
           image.current,
           {
-            bottom: "calc(var(--spacing) * -48)",
+            bottom: `calc(var(--spacing) * -${product.preview.spacing || "48"})`,
           },
           {
             bottom: "calc(var(--spacing) * -42)",
@@ -63,7 +63,7 @@ const AnimatedProduct = ({ ...product }: IProduct) => {
             bottom: "calc(var(--spacing) * -42)",
           },
           {
-            bottom: "calc(var(--spacing) * -48)",
+            bottom: `calc(var(--spacing) * -${product.preview.spacing || "48"})`,
             ease: "power2.inOut",
             duration: 0.5,
           },
@@ -109,12 +109,15 @@ const AnimatedProduct = ({ ...product }: IProduct) => {
         </h3>
 
         <Image
-          src={product.preview}
+          src={product.preview.src}
           alt={product.name}
           ref={image}
-          className="w-76 absolute -bottom-48 -left-16"
-          width={2000}
-          height={2000}
+          className={cn(
+            "w-76 absolute -bottom-48 -left-16",
+            product.preview.className,
+          )}
+          width={product.preview.width}
+          height={product.preview.height}
         />
 
         <div className="w-full flex justify-end">

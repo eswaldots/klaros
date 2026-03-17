@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <main
       id="main"
-      className="font-sans max-w-screen md:max-w-[calc(100vw-12px)] w-full bg-background-light min-h-screen"
+      className="font-sans max-w-screen md:max-w-screen w-full bg-background-light h-full overflow-y-hidden"
     >
       <Loader />
       <div className="w-full bg-background">

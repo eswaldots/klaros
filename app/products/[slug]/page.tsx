@@ -201,9 +201,7 @@ const ServerPage = async ({
             height={2000}
             className="rounded-4xl size-full object-cover"
           >
-            <source
-              src={product.images.find((p) => p.type === "video")?.src ?? ""}
-            />
+            <source src={product.video} />
           </video>
         </div>
       </div>
