@@ -2,6 +2,7 @@ import { Comparison } from "@/components/landing/comparison";
 import { Footer } from "@/components/landing/footer";
 import { Hero } from "@/components/landing/hero";
 import { LastSection } from "@/components/landing/last-section";
+import { Loader } from "@/components/landing/loader";
 import { PaymentMethods } from "@/components/landing/payment-methods";
 import { Products } from "@/components/landing/products";
 import { SocialProof } from "@/components/landing/social-proof";
@@ -9,7 +10,11 @@ import { Testimonials } from "@/components/landing/testimonials";
 
 export default function Page() {
   return (
-    <main className="font-sans max-w-screen md:max-w-[calc(100vw-12px)] w-full bg-background-light overflow-y-hidden min-h-screen">
+    <main
+      id="main"
+      className="font-sans max-w-screen md:max-w-[calc(100vw-12px)] w-full bg-background-light min-h-screen"
+    >
+      <Loader />
       <div className="w-full bg-background">
         <Hero />
       </div>
