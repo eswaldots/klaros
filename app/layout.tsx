@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import ReactLenis from "lenis/react";
 import { Header } from "@/components/landing/header";
-import { ViewTransition } from "react";
+import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
 const grotesk = localFont({
@@ -46,11 +46,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${grotesk.variable} font-sans antialiased`}>
-        <ViewTransition>
+        <ViewTransitions>
           <ReactLenis root />
           <Header />
           {children}
-        </ViewTransition>
+        </ViewTransitions>
       </body>
     </html>
   );

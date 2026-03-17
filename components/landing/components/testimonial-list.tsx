@@ -24,37 +24,42 @@ interface ITestimonial {
 
 const testimonials = [
   {
-    title: "1",
-    description: "Very tasty",
-    from: "Carolin S.",
+    title: "Adios a las manos resecas",
+    description:
+      "Por fin un lavaplatos que no me destruye la piel. Corta la grasa rapidisimo y no tuve que usar guantes. El olor a citrico es un plus tremendo.",
+    from: "Valeria M.",
   },
   {
-    title: "2",
-    description: "Very tasty",
-    from: "Carolin S.",
+    title: "Huele a limpio de verdad",
+    description:
+      "Compre el desinfectante morado y rinde muchisimo. Deja la casa oliendo fresco por horas y me da tranquilidad saber que es de pH neutro.",
+    from: "Andrés G.",
   },
   {
-    title: "Highly recommended",
-    description: "Very tasty",
-    from: "Carolin S.",
+    title: "Mi nueva marca de confianza",
+    description:
+      "El detergente blanco dejo la ropa super suave, casi ni necesité suavizante. Se nota a leguas que la formula es de alta calidad y no un quimico barato.",
+    from: "Sofía P.",
   },
   {
-    title: "4",
-    description: "Very tasty",
-    from: "Carolin S.",
+    title: "Cumplen lo que prometen",
+    description:
+      "Soy alergica a casi todos los quimicos de limpieza fuertes. Con KLAROS he podido limpiar toda la cocina sin estornudar ni sentir picor en las manos. ¡Recomendados 100%!",
+    from: "Daniela R.",
   },
   {
-    title: "5",
-    description: "Very tasty",
-    from: "Carolin S.",
+    title: "Excelente relacion calidad-precio",
+    description:
+      "Aproveché el combo de los tres productos y es la mejor inversión. Rinden un montón y, honestamente, las botellas se ven bellísimas en la cocina.",
+    from: "Carlos E.",
   },
   {
-    title: "6",
-    description: "Very tasty",
-    from: "Carolin S.",
+    title: "Atencion y calidad A1",
+    description:
+      "Pague por pago movil súper rápido y coordinamos la entrega sin rollo. El lavaplatos verde es una maravilla, hace muchísima espuma con solo un par de goticas.",
+    from: "Mariana L.",
   },
 ];
-
 function horizontalLoop(items, config) {
   items = gsap.utils.toArray(items);
   config = config || {};
@@ -266,7 +271,7 @@ const Testimonial = ({
   return (
     <div
       className={cn(
-        "flex flex-none w-[95vw] md:w-[32vw] mx-[.625em] flex-col justify-between items-start text-white h-64 border border-white rounded-sm p-8",
+        "flex flex-none w-[95vw] md:w-[32vw] mx-[.625em] flex-col justify-between items-start text-white h-76 border border-white rounded-sm p-8",
         isFocus && "bg-white text-primary",
       )}
     >
@@ -279,9 +284,11 @@ const Testimonial = ({
       </div>
       <div>
         <h4 className="tracking-tight font-medium text-3xl">
-          {index}. {testimonial.title}
+          {testimonial.title}
         </h4>
-        <p className="tracking-tight text-2xl">{testimonial.description}</p>
+        <p className="text-wrap tracking-tight max-w-[95vw] md:max-w-[30vw]  text-2xl">
+          {testimonial.description}
+        </p>
       </div>
 
       <div className="w-full grid gap-4">
@@ -298,7 +305,7 @@ const Testimonial = ({
                 isFocus && "fill-primary text-white",
               )}
             />
-            Verified
+            Verificado
           </span>
         </div>
       </div>

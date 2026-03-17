@@ -17,6 +17,7 @@ const PaymentMethods = () => {
             "Hola, estaria interesado en comprar productos KLAROS",
           )}
           target="_blank"
+          className="z-50"
         >
           <AnimatedButton>Comprar ahora</AnimatedButton>
         </Link>

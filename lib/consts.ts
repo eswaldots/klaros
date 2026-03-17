@@ -3,6 +3,7 @@ export const PRODUCTS = [
     id: 1,
     name: "Lavaplatos",
     slug: "lavaplatos",
+    social: "/green_liquid.mp4",
     colors: {
       background: "bg-green-50",
       foreground: "text-green-900",
@@ -16,11 +17,12 @@ export const PRODUCTS = [
       spacing: "42",
       className: "w-42 -bottom-44 -left-2",
     },
-    images: [],
+    video: "/lavaplatos.mp4",
   },
   {
     id: 2,
     name: "Desinfectante",
+    social: "/white.mp4",
     slug: "desinfectante",
     colors: {
       background: "bg-purple-100",
@@ -45,6 +47,7 @@ export const PRODUCTS = [
   {
     id: 3,
     name: "Detergente",
+    social: "/microfiber.mp4",
     slug: "detergente",
     colors: {
       background: "bg-neutral-100",
