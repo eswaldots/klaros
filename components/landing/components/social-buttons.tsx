@@ -12,6 +12,8 @@ import {
 import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { BUY_CTA_LINK } from "@/lib/consts";
 
 const AnimatedIcon = ({
   icon,
@@ -68,9 +70,17 @@ const AnimatedIcon = ({
 export const SocialButtons = ({ className }: { className?: string }) => {
   return (
     <div className="flex items-center gap-0.5 md:gap-1">
-      <AnimatedIcon icon={Instagram} className={className} />
-      <AnimatedIcon icon={WhatsappIcon} className={className} />
-      <AnimatedIcon icon={TiktokIcon} className={className} />
+      <Link href="https://instagram.com/quimicosklaros" target="_blank">
+        <AnimatedIcon icon={Instagram} className={className} />
+      </Link>
+      <Link
+        target="_blank"
+        href={BUY_CTA_LINK(
+          `Hola, estoy interesado en la linea de productos KLAROS`,
+        )}
+      >
+        <AnimatedIcon icon={WhatsappIcon} className={className} />
+      </Link>
     </div>
   );
 };
