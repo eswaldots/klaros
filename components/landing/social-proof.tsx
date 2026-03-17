@@ -1,7 +1,7 @@
 import { BUY_CTA_LINK } from "@/lib/consts";
 import { AnimatedButton } from "../animated/animated-button";
 import { Video } from "./components/video";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export const SocialProof = () => {
   // TODO: quita el mb

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { AnimatedButton } from "../animated/animated-button";
 import Image from "next/image";
 

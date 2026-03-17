@@ -5,10 +5,13 @@ export const PRODUCTS = [
     slug: "lavaplatos",
     social: "/green_liquid.mp4",
     colors: {
-      background: "bg-green-50",
+      background: "bg-green-100",
+      secondary: "bg-green-200",
       foreground: "text-green-900",
-      secondary: "bg-purple-300",
       bgForeground: "bg-green-900",
+      linkButtons: "bg-green-900/20",
+      fgBackground: "text-green-100",
+      border: "border-green-300",
     },
     preview: {
       src: "/lavaplatos.png",

@@ -1,7 +1,7 @@
 import { DetergentFreeIcons } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { SocialButtons } from "./components/social-buttons";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const Footer = () => {
   return (

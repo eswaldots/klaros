@@ -12,7 +12,7 @@ import {
 import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { BUY_CTA_LINK } from "@/lib/consts";
 
 const AnimatedIcon = ({

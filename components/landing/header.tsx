@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ComponentProps, useEffect, useMemo, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { AnimatedButton } from "../animated/animated-button";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { SocialButtons } from "./components/social-buttons";
 import { useParams, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";

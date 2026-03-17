@@ -1,6 +1,6 @@
 import { BUY_CTA_LINK } from "@/lib/consts";
 import { AnimatedButton } from "../animated/animated-button";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 const PaymentMethods = () => {
   return (

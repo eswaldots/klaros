@@ -12,7 +12,7 @@ import MotionPathPlugin from "gsap/MotionPathPlugin";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useIsMobile } from "@/hooks/use-is-mobile";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { BUY_CTA_LINK } from "@/lib/consts";
 
 gsap.registerPlugin(useGSAP);

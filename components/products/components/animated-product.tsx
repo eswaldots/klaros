@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Observer } from "gsap/Observer";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { useRef } from "react";
 import gsap from "gsap";
 
