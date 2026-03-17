@@ -19,9 +19,18 @@ export const SocialProof = () => {
 
       <div className="flex md:flex-row flex-col items-start justify-start gap-0 md:gap-24">
         <div className="w-full md:w-1/2 relative md:h-auto h-172">
-          <Video className="absolute top-0 left-0 md:block hidden -rotate-[12deg]" />
-          <Video className="absolute top-0 right-6 md:rotate-12 rotate-12 md:top-0 md:left-96 z-20" />
-          <Video className="absolute top-1/3 left-6 md:top-24 md:left-36 z-10 -rotate-6 md:-rotate-6" />
+          <Video
+            src="/Clean_Kitchen_Counter_Citrus_Scent.mp4"
+            className="absolute top-0 left-0 md:block hidden -rotate-[12deg]"
+          />
+          <Video
+            src="/Luxurious_Plate_Washing_Slow_Motion.mp4"
+            className="absolute top-0 right-6 md:rotate-12 rotate-12 md:top-0 md:left-96 z-20"
+          />
+          <Video
+            src="/Soft_Towel_Comfort_Lifestyle_Video.mp4"
+            className="absolute top-1/3 left-6 md:top-24 md:left-36 z-10 -rotate-6 md:-rotate-6"
+          />
         </div>
 
         <div className="md:w-md w-full px-4">
@@ -32,7 +41,7 @@ export const SocialProof = () => {
           </h3>
 
           <p className="tracking-tight text-primary md:text-2xl text-3xl mb-8 my-6 leading-[1]">
-            Pensada para las familias de hoy, esta fórmula maestra contiene
+            Pensada para las familias de hoy, esta formula maestra contiene
             tecnología de pH neutro, poder desengrasante activo y cero agentes
             corrosivos. Absolutamente segura. Implacable con el sucio.
           </p>

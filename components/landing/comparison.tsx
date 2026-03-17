@@ -1,19 +1,20 @@
 import { Check, X } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
 
 const Comparison = () => {
   return (
-    <section className="p-3 md:h-[150vh] z-50 w-full md:my-0 my-24">
+    <section className="p-3 md:h-fit py-24 z-50 w-full md:my-0 my-24">
       <div className="md:text-left text-center h-full w-full rounded-md px-2 md:p-3 md:flex-row flex-col-reverse flex items-center gap-2 md:gap-24 z-50 bg-transparent md:bg-white">
-        <div className="md:h-full h-96 max-w-lg w-full md:min-w-md bg-primary rounded-sm z-20">
-          {/*<Image
+        <div className="md:h-[66rem] bg-pink-50 h-96 max-w-lg w-full md:min-w-md rounded-sm z-20">
+          <Image
             alt="gota"
-            src="/gota.jpg"
+            src="/bubbles.png"
             width={6000}
             height={6000}
             className="h-full w-auto object-cover rounded-sm z-20"
-          /> */}
+          />
         </div>
 
         <ComparisonTable />

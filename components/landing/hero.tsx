@@ -74,7 +74,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="md:bg-transparent bg-background md:pb-0 pb-64 w-full md:flex-row flex-col md:items-start md:gap-0 gap-48 flex items-center justify-between px-42 py-12">
+      <div className="md:bg-transparent bg-background md:pb-0 pb-64 w-full md:flex-row flex-col md:items-start md:gap-0 gap-48 flex items-center justify-between px-42 py-12 z-20">
         <Detergent />
         <Paragraph />
       </div>
@@ -109,7 +109,7 @@ const Marquee = () => {
   });
 
   return (
-    <div className="grid">
+    <div className="grid z-10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -120,8 +120,17 @@ const Marquee = () => {
           overflow: "visible",
           gridArea: "1 / 1",
         }}
-        className="marquee-bg-svg text-primary w-screen md:mb-0 mb-1.5"
+        className="z-10 marquee-bg-svg text-primary w-screen md:mb-0 mb-1.5"
       >
+        <rect
+          stroke="currentColor"
+          strokeWidth={110}
+          width={300}
+          y={210}
+          height={0.001}
+          className="text-background z-10"
+        ></rect>
+
         <path
           stroke="currentColor"
           strokeWidth={160}
@@ -132,7 +141,10 @@ const Marquee = () => {
 
         <text width="100%" style={{ transform: "translate3d(0,0,0)" }}>
           <textPath
-            style={{ transform: "translate3d(0,0,0)" }}
+            style={{
+              transform: "translate3d(0,0,0)",
+              alignmentBaseline: "central",
+            }}
             alignmentBaseline="central"
             className="text-9xl fill-background uppercase font-bold tracking-tight"
             href="#curve"
@@ -255,16 +267,17 @@ const Detergent = () => {
   });
 
   return (
-    <div className="relative w-full z-10">
+    <div className="relative w-full z-20">
       <svg
         viewBox="0 0 140 150"
-        className="size-136 md:size-176 rotate-40 -ml-64 md:-ml-40 md:-mt-14 z-0 mt-14 overflow-visible"
+        className="size-136 md:size-176 rotate-40 -ml-64 md:-ml-40 md:-mt-14 z-30 mt-14 overflow-visible"
       >
         <path
           ref={ellipseRef}
           d="M 75, 5 a 60,70 0 1,0 1,0 Z"
           fill="transparent"
           stroke="white"
+          className="z-20"
           strokeWidth="5.5"
           id="ruta-elipse"
         />

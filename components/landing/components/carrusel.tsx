@@ -75,7 +75,7 @@ const Carrusel = () => {
         {PRODUCTS.map((product, i) => {
           return (
             <Link href={`/products/${product.slug}`} key={product.id}>
-              <div className="box-content shrink-0 w-3xl h-[80vh] rounded-[4rem] bg-secondary relative overflow-hidden group">
+              <div className="box-content shrink-0 w-3xl h-[50vh] md:h-[80vh] rounded-[4rem] bg-secondary relative overflow-hidden group">
                 <h2 className="text-6xl absolute z-20 bottom-12 text-white left-12 font-medium tracking-tight">
                   {product.name}
                 </h2>

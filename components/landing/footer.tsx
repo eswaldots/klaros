@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
 
         <div className="absolute bottom-0 pb-4">
-          <h1 className="md:block hidden z-10 text-primary font-bold tracking-tight text-[33vw] leading-none overflow-hidden">
+          <h1 className="md:block hidden z-10 text-primary font-bold tracking-tight text-[33vw] leading-[0.75] overflow-hidden">
             KLAROS
           </h1>
           <div className="px-6 w-full flex items-center justify-between">

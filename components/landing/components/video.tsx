@@ -5,7 +5,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 
-const Photo = ({ className }: { className?: string }) => {
+const Photo = ({
+  className,
+  src,
+  videoClassName,
+}: {
+  className?: string;
+  src: string;
+  videoClassName?: string;
+}) => {
   const magnetic = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -61,7 +69,20 @@ const Photo = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      <div className="text-white bg-secondary size-full rounded-xs"></div>
+      <div className="text-white bg-secondary size-full relative rounded-xs">
+        <video
+          playsInline
+          muted
+          loop
+          autoPlay
+          className={cn(
+            "absolute inset-0 size-full object-cover rounded-xs subpixel-antialiased",
+            videoClassName,
+          )}
+        >
+          <source src={src} />
+        </video>
+      </div>
     </div>
   );
 };

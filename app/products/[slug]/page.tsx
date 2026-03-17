@@ -32,7 +32,12 @@ const ServerPage = async ({
   }
 
   return (
-    <main className={cn("w-[calc(100vw-16px)]", product.colors.background)}>
+    <main
+      className={cn(
+        "w-screen md:w-[calc(100vw-16px)]",
+        product.colors.background,
+      )}
+    >
       <div className="flex flex-col-reverse md:flex-row items-start w-full pt-18 md:pt-36 px-4 md:px-12 justify-between">
         <div className="grid gap-12 md:gap-18 w-full md:max-w-[40vw] md:mt-0 mt-12">
           <h2

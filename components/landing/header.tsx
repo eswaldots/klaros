@@ -46,7 +46,7 @@ const LinkButton = ({
       <Button
         {...props}
         className={cn(
-          "px-2 backdrop-blur-lg cursor-pointer text-xl tracking-tight bg-primary/20 py-0.5 font-medium h-fit",
+          "border-none px-2 backdrop-blur-lg cursor-pointer text-xl tracking-tight bg-primary/20 py-0.5 font-medium h-fit",
           product && `bg-black/5 ${product.colors.linkButtons} text-white`,
           product && isActive && pathname === "/products"
             ? "bg-black text-white"
@@ -130,6 +130,7 @@ export const Header = () => {
         )}
       />
 
+      {/* @ts-ignore */}
       <LinkButtons product={product} />
 
       <div className="flex items-center gap-1">

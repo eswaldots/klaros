@@ -44,19 +44,19 @@ const testimonials = [
   {
     title: "Cumplen lo que prometen",
     description:
-      "Soy alergica a casi todos los quimicos de limpieza fuertes. Con KLAROS he podido limpiar toda la cocina sin estornudar ni sentir picor en las manos. ¡Recomendados 100%!",
+      "Soy alergica a casi todos los quimicos de limpieza fuertes. Con KLAROS he podido limpiar toda la cocina sin estornudar ni sentir picor en las manos.",
     from: "Daniela R.",
   },
   {
     title: "Excelente relacion calidad-precio",
     description:
-      "Aproveché el combo de los tres productos y es la mejor inversión. Rinden un montón y, honestamente, las botellas se ven bellísimas en la cocina.",
+      "Aproveche el combo de los tres productos y es la mejor inversion. Rinden un monton y, honestamente, las botellas se ven bellísimas en la cocina.",
     from: "Carlos E.",
   },
   {
     title: "Atencion y calidad A1",
     description:
-      "Pague por pago movil súper rápido y coordinamos la entrega sin rollo. El lavaplatos verde es una maravilla, hace muchísima espuma con solo un par de goticas.",
+      "Pague por pago movil super rapido y coordinamos la entrega sin rollo. El lavaplatos verde es una maravilla, hace muchísima espuma con solo un par de goticas.",
     from: "Mariana L.",
   },
 ];
