@@ -17,6 +17,7 @@ export const Loader = () => {
 
     tl.to(container.current, {
       opacity: 0,
+      zIndex: 0,
       ease: "power2.inOut",
       duration: 0.5,
     });
