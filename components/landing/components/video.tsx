@@ -80,7 +80,7 @@ const Photo = ({
             videoClassName,
           )}
         >
-          <source src={src} />
+          <source type="video/webm" src={src} />
         </video>
       </div>
     </div>
