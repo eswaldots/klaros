@@ -34,8 +34,51 @@ const grotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "KLAROS",
-  description: "KLAROS es un emprendimiento de productos de limpieza",
+  metadataBase: new URL("https://klaros-nine.vercel.app/"),
+  title: {
+    default: "KLAROS | Pureza y Limpieza",
+    template: "%s | KLAROS",
+  },
+  description:
+    "Detergentes y desinfectantes biodegradables con pH 7 Neutro. Limpieza profunda con calidad de laboratorio que no irrita tu piel ni daña el hogar.",
+  keywords: [
+    "detergente",
+    "desinfectante",
+    "limpieza del hogar",
+    "pH neutro",
+    "biodegradable",
+    "cleantech",
+    "KLAROS",
+    "Venezuela",
+  ],
+  authors: [{ name: "Equipo KLAROS" }],
+  creator: "KLAROS",
+  openGraph: {
+    type: "website",
+    locale: "es_VE",
+    url: "/",
+    title: "KLAROS | Limpiar ya no significa dolor",
+    description:
+      "Descubre nuestra línea premium: Lavaplatos, Desinfectante y Detergente. Tecnología de limpieza respetuosa con tu piel y tu entorno.",
+    siteName: "KLAROS",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KLAROS | Pureza y Limpieza",
+    description:
+      "Detergentes biodegradables con pH 7 Neutro. Limpieza que cuida tu piel.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
