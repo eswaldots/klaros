@@ -11,6 +11,15 @@ import { useParams, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { IProduct, PRODUCTS } from "@/lib/consts";
 import { Button } from "../ui/button";
+import { useIsMobile } from "@/hooks/use-is-mobile";
+import {
+  HugeiconsFreeIcons,
+  MenuIcon,
+  X,
+  XlsIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { useLenis } from "lenis/react";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -60,6 +69,8 @@ const LinkButton = ({
 
 export const Header = () => {
   const { slug } = useParams();
+
+  const isMobile = useIsMobile();
 
   const headerRef = useRef(null);
   const pathname = usePathname();
@@ -122,19 +133,23 @@ export const Header = () => {
         "fixed top-0 left-0 px-4 md:px-10 py-8 flex items-center justify-between w-screen md:max-w-[calc(100vw-12px)] z-999",
       )}
     >
-      <SocialButtons
-        className={cn(
-          product
-            ? `${product.colors.secondary} ${product.colors.foreground}`
-            : "bg-orange-100",
-        )}
-      />
+      {isMobile ? (
+        <Menu product={product as any} />
+      ) : (
+        <SocialButtons
+          className={cn(
+            product
+              ? `${product.colors.secondary} ${product.colors.foreground}`
+              : "bg-orange-100",
+          )}
+        />
+      )}
 
       {/* @ts-ignore */}
-      <LinkButtons product={product} />
+      {!isMobile && <LinkButtons product={product} />}
 
       <div className="flex items-center gap-1">
-        <Link href="about-us">
+        <Link href="/about-us">
           <AnimatedButton
             variant="secondary"
             buttonClassName={cn(
@@ -148,5 +163,197 @@ export const Header = () => {
         </Link>
       </div>
     </header>
+  );
+};
+
+const Menu = ({ product }: { product?: IProduct }) => {
+  const button = useRef<HTMLButtonElement>(null);
+  const socialContainer = useRef<HTMLDivElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
+  const isOpen = useRef(false);
+  const linksContainer = useRef<HTMLDivElement>(null);
+  const tl = useRef<gsap.core.Timeline | null>(null);
+  const lenis = useLenis();
+  const pathname = usePathname();
+
+  useGSAP(() => {
+    const links = gsap.utils.toArray(
+      linksContainer.current?.children as Element[],
+    );
+
+    gsap.set(menu.current, { height: "0vh" });
+    gsap.set(links, { y: 80, opacity: 0 });
+    gsap.set(socialContainer.current, { y: 40, opacity: 0 });
+    gsap.set(button.current, { scale: 0.5, opacity: 0 });
+
+    tl.current = gsap
+      .timeline({ paused: true })
+      .to(menu.current, {
+        height: "100vh",
+        duration: 0.8,
+        ease: "power4.inOut",
+      })
+      .to(
+        button.current,
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.4,
+          ease: "back.out(1.5)",
+        },
+        "-=0.3",
+      )
+      .to(
+        links,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power3.out",
+        },
+        "-=0.5",
+      )
+      .to(
+        socialContainer.current,
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power3.out",
+        },
+        "-=0.6",
+      );
+  });
+
+  const { contextSafe } = useGSAP(() => {});
+
+  const toggle = contextSafe(() => {
+    if (!isOpen.current) {
+      lenis?.stop();
+      isOpen.current = true;
+      tl.current?.play();
+    } else {
+      lenis?.start();
+      isOpen.current = false;
+      tl.current?.reverse();
+    }
+  });
+
+  useEffect(() => {
+    if (isOpen.current) {
+      lenis?.start();
+      isOpen.current = false;
+      tl.current?.reverse();
+    }
+  }, [pathname]);
+
+  return (
+    <section>
+      <Button
+        size="lg"
+        className={cn(
+          product
+            ? `${product.colors.secondary} ${product.colors.foreground}`
+            : "bg-orange-100 text-primary",
+        )}
+        onClick={toggle}
+      >
+        <HugeiconsIcon icon={MenuIcon} strokeWidth={3} />
+      </Button>
+
+      <div
+        className={cn(
+          "fixed top-0 left-0 max-h-screen w-screen h-0 z-[999] overflow-hidden",
+          product
+            ? `${product.colors.background}`
+            : "bg-background-light text-primary",
+        )}
+        ref={menu}
+      >
+        <Button
+          size="lg"
+          ref={button}
+          className={cn(
+            "absolute left-6 top-9 z-50",
+            product
+              ? `${product.colors.secondary} ${product.colors.foreground}`
+              : "bg-orange-100 text-primary",
+          )}
+          onClick={toggle}
+        >
+          <HugeiconsIcon icon={X} strokeWidth={3} />
+        </Button>
+
+        <div
+          ref={linksContainer}
+          className={cn(
+            "mt-32 mx-6 flex flex-col gap-1",
+            product ? product.colors.foreground : "text-primary",
+          )}
+        >
+          <Link href="/">
+            <h3
+              className={cn(
+                "text-6xl font-medium tracking-tight transition-opacity duration-300",
+              )}
+            >
+              Inicio
+            </h3>
+          </Link>
+          <Link href="/products">
+            <h3
+              className={cn(
+                "text-6xl font-medium tracking-tight transition-opacity duration-300",
+              )}
+            >
+              Productos
+            </h3>
+          </Link>
+          <Link href="/about-us">
+            <h3
+              className={cn(
+                "text-6xl font-medium tracking-tight transition-opacity duration-300",
+              )}
+            >
+              Conoce al equipo
+            </h3>
+          </Link>
+        </div>
+
+        <div
+          ref={socialContainer}
+          className="absolute bottom-8 left-0 px-6 w-full"
+        >
+          <SocialButtons
+            className={cn(
+              "bg-white",
+              product
+                ? `${product.colors.secondary} ${product.colors.foreground}`
+                : "bg-background-light text-primary",
+            )}
+          />
+
+          <div
+            className={cn(
+              "mt-8 flex items-center justify-between w-full",
+              product ? product.colors.foreground : "text-primary",
+            )}
+          >
+            <span className="tracking-tight font-medium text-xl">Klaros.</span>
+
+            <div>
+              <Link
+                href="https://aaronavila.is-a.dev"
+                target="_blank"
+                className="text-sm"
+              >
+                Sitio web hecho por Aaron Avila
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

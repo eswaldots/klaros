@@ -133,9 +133,6 @@
 /* 	display: none; */
 /* } */
 /**/
-body {
-	scrollbar-width: 12px;
-}
 
 ::view-transition-group(page) {
 	animation-duration: 600ms;
@@ -156,6 +153,7 @@ body {
 		opacity: 1;
 	}
 }
+
 
 ::view-transition-old(root),
 ::view-transition-new(root) {

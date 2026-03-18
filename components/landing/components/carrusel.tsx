@@ -81,7 +81,7 @@ const Carrusel = () => {
                 </h2>
                 <div
                   id={`overlay-${i}`}
-                  className="z-10 absolute inset-0 backdrop-blur-2xl rounded-[4rem] bg-black/10"
+                  className="z-10 absolute inset-0 md:block hidden backdrop-blur-2xl rounded-[4rem] bg-black/10"
                 />
 
                 <video

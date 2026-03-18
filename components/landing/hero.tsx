@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 import gsap from "gsap";
@@ -94,6 +94,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Marquee = () => {
   const ref = useRef(null);
   const textRef = useRef<SVGTextPathElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
 
   useGSAP(() => {
     ScrollTrigger.create({
@@ -106,6 +107,20 @@ const Marquee = () => {
         });
       },
     });
+
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "power1.inOut",
+        delay: initialDelay - 0.25,
+      },
+    });
+
+    tl.fromTo(
+      pathRef.current,
+      { drawSVG: "0% 0%" },
+      { drawSVG: "0% 100%", duration: 1 },
+    );
   });
 
   return (
@@ -120,7 +135,7 @@ const Marquee = () => {
           overflow: "visible",
           gridArea: "1 / 1",
         }}
-        className="z-10 marquee-bg-svg text-primary w-screen md:mb-0 mb-1.5"
+        className="z-10 marquee-bg-svg text-primary w-screen md:mb-0 mb-1.5 overflow-hidden"
       >
         <rect
           stroke="currentColor"
@@ -135,6 +150,7 @@ const Marquee = () => {
           stroke="currentColor"
           strokeWidth={160}
           className="text-primary"
+          ref={pathRef}
           id="curve"
           d="M-71 371.6C126.3 260 593.5 65.8 934.5 80.8c313 13.8 497 136 572 200"
         ></path>
@@ -312,6 +328,7 @@ const Detergent = () => {
         <Image
           src="/output_animated.webp"
           unoptimized
+          priority
           loading="eager"
           className="md:w-96"
           width="350"

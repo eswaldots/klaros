@@ -6,6 +6,7 @@ export const PRODUCTS = [
     social: "/green_liquid.mp4",
     colors: {
       background: "bg-green-100",
+      backgroundLight: "bg-green-50",
       secondary: "bg-green-200",
       foreground: "text-green-900",
       bgForeground: "bg-green-900",
@@ -44,6 +45,7 @@ export const PRODUCTS = [
     slug: "desinfectante",
     colors: {
       background: "bg-purple-100",
+      backgroundLight: "bg-purple-50",
       secondary: "bg-purple-200",
       foreground: "text-purple-900",
       bgForeground: "bg-purple-900",
@@ -82,6 +84,7 @@ export const PRODUCTS = [
     slug: "detergente",
     colors: {
       background: "bg-neutral-100",
+      backgroundLight: "bg-neutral-50",
       secondary: "bg-neutral-200",
       foreground: "text-neutral-900",
       bgForeground: "bg-neutral-900",

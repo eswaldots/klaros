@@ -2,12 +2,37 @@ import { DetergentFreeIcons } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { SocialButtons } from "./components/social-buttons";
 import { Link } from "next-view-transitions";
+import Image from "next/image";
+import { AnimatedButton } from "../animated/animated-button";
 
 const Footer = () => {
   return (
     <footer className="md:h-[55rem] h-[72rem]">
       <div className="h-full w-full grid grid-rows-2 md:grid-cols-2 gap-6 px-2 relative">
-        <div className="h-[36rem] bg-secondary z-40 w-full rounded-sm"></div>
+        <div className="h-[36rem] bg-secondary z-40 w-full rounded-sm relative">
+          <p className="text-center absolute top-12 left-1/2 -translate-x-1/2 z-40 md:text-8xl text-[5.25rem] tracking-tighter font-semibold leading-[0.7]">
+            <span className="text-primary-foreground">LIMPIEZA</span>
+            <br />
+            <span className="text-primary-foreground">ENCUENTRA</span>
+            <br />
+            <span className="text-primary-foreground">BIENESTAR</span>
+            <br />
+          </p>
+
+          <Image
+            src="/footer.webp"
+            fill
+            className="object-cover rounded-sm"
+            alt="Footer"
+          />
+
+          <AnimatedButton
+            className="absolute left-1/2 -translate-x-1/2 bottom-12"
+            variant="secondary"
+          >
+            Comprar ahora
+          </AnimatedButton>
+        </div>
         <div className="h-full w-full rounded-sm">
           <Link
             href="/products/"
