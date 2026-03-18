@@ -21,6 +21,21 @@ export const PRODUCTS = [
       className: "w-42 -bottom-44 -left-2",
     },
     video: "/lavaplatos.mp4",
+    description:
+      "Arranca la grasa mas rebelde sin sacrificar la suavidad de tus manos. Formulado con tecnologia de pH equilibrado para proteger tu piel en cada lavada, creando una espuma densa, efectiva y respetuosa con el medio ambiente.",
+    ingredients: [
+      "Agua purificada",
+      "Surfactantes biodegradables derivados del coco",
+      "Glicerina vegetal",
+      "Extracto de limon natural",
+      "Regulador de pH",
+    ],
+    transparency: [
+      "0% Sulfatos agresivos",
+      "Fórmula 100% biodegradable",
+      "Empaque reciclable",
+      "Libre de crueldad animal",
+    ],
   },
   {
     id: 2,
@@ -37,10 +52,21 @@ export const PRODUCTS = [
       border: "border-purple-300",
     },
     preview: { src: "/desinfectante.png", height: 2000, width: 2000 },
-    ingredients: ["1/2 palo", "1/2 palo"],
-    transparency: ["1/2 palo", "1/2 palo"],
+    ingredients: [
+      "Agua desionizada",
+      "Amonio cuaternario de quinta generación",
+      "Fragancia citrica natural",
+      "Solventes orgánicos",
+      "Estabilizadores de fórmula",
+    ],
+    transparency: [
+      "pH 7 Neutro",
+      "Libre de cloro y amoniaco",
+      "Seguro para mascotas y niños",
+      "Aroma sin alérgenos",
+    ],
     description:
-      "A disinfectant is a chemical substance or compound used to inactivate or destroy microorganisms on inert surfaces.[1] Disinfection does not necessarily kill all microorganisms, especially resistant bacterial spores;",
+      "Mas que desinfectar, KLAROS purifica tus espacios. Nuestra formula avanzada elimina el 99.9% de bacterias sin dejar residuos quimicos agresivos, manteniendo el aroma de un hogar fresco y un entorno totalmente seguro para los que más amas.",
     images: [
       {
         type: "video",
@@ -72,6 +98,21 @@ export const PRODUCTS = [
     },
     video: "/detergente.mp4",
     images: [],
+    description:
+      "Cuidado textil de nivel experto. Nuestro detergente penetra las fibras para remover manchas dificiles mientras mantiene la ropa increiblemente suave. Diseñado meticulosamente para pieles sensibles, porque limpiar tu ropa no deberia irritar tu piel.",
+    ingredients: [
+      "Agua tratada",
+      "Enzimas activas quitamanchas",
+      "Surfactantes no iónicos",
+      "Agentes suavizantes naturales",
+      "Conservantes ecológicos",
+    ],
+    transparency: [
+      "Testado dermatológicamente",
+      "Sin colorantes artificiales",
+      "Efectivo en agua fria",
+      "Libre de fosfatos",
+    ],
   },
 ];
 
