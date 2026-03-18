@@ -33,7 +33,7 @@ export const SocialProof = () => {
           />
         </div>
 
-        <div className="md:w-md w-full px-4">
+        <div className="md:w-md w-full px-4 z-40 ">
           <h3 className="font-medium tracking-tighter text-primary leading-[1.1] text-4xl">
             Queremos que la limpieza segura y respaldada por la ciencia sea
             simple y accesible — para que puedas cuidar tu piel, proteger tu
@@ -46,11 +46,12 @@ export const SocialProof = () => {
             corrosivos. Absolutamente segura. Implacable con el sucio.
           </p>
 
-          <div>
+          <div className="z-40">
             <Link
               href={BUY_CTA_LINK(
                 "Hola, estaria interesado en comprar productos KLAROS",
               )}
+              className="z-40"
               target="_blank"
             >
               <AnimatedButton>Comprar</AnimatedButton>

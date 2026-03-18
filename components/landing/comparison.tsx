@@ -13,7 +13,7 @@ const Comparison = () => {
             src="/bubbles.png"
             width={6000}
             height={6000}
-            className="h-full w-auto object-cover rounded-sm z-20"
+            className="h-full w-full md:w-auto object-cover rounded-sm z-20"
           />
         </div>
 

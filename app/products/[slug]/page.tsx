@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { IProduct, PRODUCTS } from "@/lib/consts";
+import { BUY_CTA_LINK, IProduct, PRODUCTS } from "@/lib/consts";
 import { cn } from "@/lib/utils";
 import {
   BacteriaIcon,
@@ -25,6 +25,7 @@ import {
   StarsIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const ServerPage = async ({
@@ -73,15 +74,22 @@ const ServerPage = async ({
           </div>
 
           <div className="flex md:flex-row flex-col-reverse items-start md:items-center gap-4 max-w-full">
-            <Button
-              className={cn(
-                product.colors.bgForeground,
-                product.colors.fgBackground,
-                "text-3xl tracking-tight h-fit py-2 px-8 cursor-pointer w-fit",
+            <Link
+              target="_blank"
+              href={BUY_CTA_LINK(
+                `Hola, me encantaria llevarme un ${product.name} KLAROS`,
               )}
             >
-              Comprar
-            </Button>
+              <Button
+                className={cn(
+                  product.colors.bgForeground,
+                  product.colors.fgBackground,
+                  "text-3xl tracking-tight h-fit py-2 px-8 cursor-pointer w-fit",
+                )}
+              >
+                Comprar
+              </Button>
+            </Link>
 
             <span
               className={cn(
