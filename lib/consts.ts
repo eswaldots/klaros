@@ -37,6 +37,8 @@ export const PRODUCTS = [
       border: "border-purple-300",
     },
     preview: { src: "/desinfectante.png", height: 2000, width: 2000 },
+    ingredients: ["1/2 palo", "1/2 palo"],
+    transparency: ["1/2 palo", "1/2 palo"],
     description:
       "A disinfectant is a chemical substance or compound used to inactivate or destroy microorganisms on inert surfaces.[1] Disinfection does not necessarily kill all microorganisms, especially resistant bacterial spores;",
     images: [
@@ -54,9 +56,12 @@ export const PRODUCTS = [
     slug: "detergente",
     colors: {
       background: "bg-neutral-100",
-      secondary: "bg-purple-300",
+      secondary: "bg-neutral-200",
       foreground: "text-neutral-900",
       bgForeground: "bg-neutral-900",
+      linkButtons: "bg-neutral-900/20",
+      fgBackground: "text-neutral-100",
+      border: "border-neutral-300",
     },
     preview: {
       src: "/detergente.png",
