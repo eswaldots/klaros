@@ -178,6 +178,7 @@ const Menu = ({ product }: { product?: IProduct }) => {
 
   useGSAP(() => {
     const links = gsap.utils.toArray(
+      // @ts-ignore
       linksContainer.current?.children as Element[],
     );
 
